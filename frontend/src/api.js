@@ -1,7 +1,8 @@
-const BASE_URL = 'http://localhost:4000/task/api/v1';
+
+const  apiUrl=import.meta.env.VITE_API_URL;
 const createTask=async (task)=>{
     try {
-      const res= await fetch(`${BASE_URL}/add`,{
+      const res= await fetch(`${apiUrl}/add`,{
         method:"POST",
         headers:{
           "Content-Type":"application/json"
@@ -20,7 +21,7 @@ const createTask=async (task)=>{
   }
 const getTasks=async()=>{
     try {
-      const res= await fetch(`${BASE_URL}/all`)
+      const res= await fetch(`${apiUrl}/all`)
       if(!res.ok){
         throw new Error("Failed to fetch tasks")
       }
@@ -33,7 +34,7 @@ const getTasks=async()=>{
   }
 const updateTask=async(id,updatedTask)=>{
     try {
-      const res= await fetch(`${BASE_URL}/update/${id}`,{
+      const res= await fetch(`${apiUrl}/update/${id}`,{
         method:"PATCH",
         headers:{
           "Content-Type":"application/json"
@@ -52,7 +53,7 @@ const updateTask=async(id,updatedTask)=>{
   }
 const deleteTask=async(id)=>{
     try {
-      const res= await fetch(`${BASE_URL}/delete/${id}`,{ method:"DELETE"})
+      const res= await fetch(`${apiUrl}/delete/${id}`,{ method:"DELETE"})
       if(!res.ok){
         throw new Error("Failed to delete task")
       } 
