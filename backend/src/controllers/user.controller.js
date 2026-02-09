@@ -21,7 +21,7 @@ const login= async(req,res)=>{
     return res.status(404).json({message:"user not found"});
     const isValid= await bcrypt.compare(password,user.password);
      if(!isValid)
-      return res.status(400).json({message:"Wrong password"});
+      return res.status(400).send("Wrong password");
      const token = jwt.sign(
     { id: user._id },
     "SECRET_KEY",
@@ -34,4 +34,18 @@ const login= async(req,res)=>{
   res.status(500).json({message:"internal server error",error})
  }
 }
-export {register,login}
+const verifyToken = (req, res, next) => {
+  const token = req.headers.authorization;
+
+  if (!token) return res.sendStatus(403);
+
+  jwt.verify(token, "SECRET_KEY", (err, user) => {
+    if (err) return res.sendStatus(403);
+    req.user = user;
+    next();
+  });
+};
+
+
+
+export {register,login,verifyToken}
