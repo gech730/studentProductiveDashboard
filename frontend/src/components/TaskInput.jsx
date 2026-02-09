@@ -53,7 +53,9 @@ export default function TaskInput() {
     
   }
 }
-
+   const logout = () => {
+  localStorage.removeItem("token");
+};
   const removeTask = async (id) => {
   try {
     await deleteTask(id);
@@ -85,7 +87,8 @@ const toggleTaskStatus = async (id) => {
   }
   return (
      <div className="app-container">
-
+     <button style={{ color: "white", fontSize: "30px", backgroundColor: "red" ,padding:"5px",border:"none"}}
+       onClick={logout}>logout</button>
    <div className='header'>
      <h1>Student Productive Dashboard</h1>
 
