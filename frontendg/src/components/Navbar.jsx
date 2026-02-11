@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { isLoggedIn, logout } from '../utils/auth.js';
-
+import '../css/navbar.css'
+import logo from '../../public/student-svgrepo-com.svg';
 function Navbar() {
   const navigate = useNavigate();
 
@@ -11,16 +12,24 @@ function Navbar() {
   };
 
   return (
-    <nav style={{ padding: 10, background: "#ddd" }}>
-      <Link to="/">Home</Link> |{"  "}
-      <Link to="/products">Products </Link> |{"  "}
-      <Link to="/contact">Contact</Link> |{"  "}
+    <nav className='navbar'>
+      <div className="logo">
+        <Link to="/">
+        <img src={logo} alt="STD" />
+        </Link> 
+      </div>
+      <div className="nav-link">
+        <Link to="/">Home</Link> 
+        <Link to="/products">program </Link> 
+        <Link to="/contact">Contact</Link> 
 
-      {isLoggedIn() ? (
-        <button onClick={handleLogout}>Logout</button>
-      ) : (
-        <Link to="/login">Login</Link>
-      )}
+        {isLoggedIn() ? (
+          <button onClick={handleLogout}>Logout</button>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
+      </div>
+
     </nav>
   );
 }

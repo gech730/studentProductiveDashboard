@@ -1,0 +1,64 @@
+*{
+  padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+.home-page-container{
+  border: 1px solid red;
+  margin-top: 50px;
+
+}
+
+@keyframes welcome {
+  0% {
+color: rgb(30, 29, 29);
+ transform: rotateY(0deg);
+
+  }
+  25% {
+    color:rgb(231, 7, 168);
+    transform: rotateY(-10deg);
+  
+  }
+  50% {
+    color:rgb(5, 55, 255);
+      transform: rotateX(90deg);
+  
+  }
+  
+  75% {
+    color:rgb(11, 234, 241);
+ transform: rotateY(5deg);
+  
+    
+  }
+  100% {
+    color:rgb(74, 222, 5);
+       color:rgb(26, 122, 183);
+       transform: rotateY(-10deg);
+ 
+  }
+}
+.welcome{
+  text-align: center;
+  padding: 10px;
+  font-family: monospace;
+  font-weight: 800;
+  font-size: 1.5rem;
+  animation: welcome 10s linear 3s infinite alternate;
+ 
+}
+.template{
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 30px;
+  column-gap: 60px;
+  justify-content: space-around;
+}
+.template div{
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+  border: 1px solid red;
+ 
+}
