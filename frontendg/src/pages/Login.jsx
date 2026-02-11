@@ -1,7 +1,7 @@
 import React,{ useState }  from 'react';
 import { useNavigate } from 'react-router-dom';
 import { loginRequest } from '../utils/api.js';
-
+import '../css/navbar.css'
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,14 +13,15 @@ function Login() {
 
       localStorage.setItem("token", data.token);
 
-      navigate("/products");
+      navigate("/program");
     } catch (err) {
       alert("Login failed");
     }
   };
 
   return (
-    <>
+    <div className='login-page-container'>
+      <div className='input-area'>
       <h1>Login</h1>
 
       <input
@@ -37,7 +38,9 @@ function Login() {
       <button onClick={handleLogin}>
         Login
       </button>
-    </>
+      </div>
+      
+    </div>
   );
 }
 

@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './pages/Home.jsx';
-import Products from './pages/Products.jsx';
 import Contact from './pages/Contact.jsx';
 import Login from './pages/Login.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
 import Navbar from './components/Navbar.jsx';
-
+import Footer from './components/Footer.jsx';
+import Dashboard from './pages/Dashboard.jsx';
 function App() {
   return (
     <BrowserRouter>
@@ -14,12 +14,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-
+       
         <Route
-          path="/products"
+          path="/program"
           element={
             <ProtectedRoute>
-              <Products />
+              <Dashboard />
             </ProtectedRoute>
           }
         />
@@ -33,6 +33,7 @@ function App() {
           }
         />
       </Routes>
+     <Footer/>
     </BrowserRouter>
   );
 }

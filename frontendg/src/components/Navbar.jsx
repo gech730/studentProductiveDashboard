@@ -20,11 +20,11 @@ function Navbar() {
       </div>
       <div className="nav-link">
         <Link to="/">Home</Link> 
-        <Link to="/products">program </Link> 
+        <Link to="/program">program </Link> 
         <Link to="/contact">Contact</Link> 
 
         {isLoggedIn() ? (
-          <button onClick={handleLogout}>Logout</button>
+          <button className='logout' onClick={handleLogout}>Logout</button>
         ) : (
           <Link to="/login">Login</Link>
         )}

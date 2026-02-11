@@ -44,3 +44,41 @@
   color: gold;
   text-decoration: none;
 }
+/*  */
+.login-page-container{
+  min-height: 77vh;
+  margin-top: 50px;
+  display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.input-area{
+   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  row-gap: 8px;
+}
+.input-area h1{
+  text-align: center;
+}
+
+button{
+  background-color: green;
+  color: white;
+  margin: 5px auto;
+
+}
+input , button{
+  border: none;
+  outline: none;
+  border-radius: 10px;
+   padding:5px 10px;
+
+}
+.logout{
+  background-color: red;
+}
+input{
+ width: 100%;
+}

@@ -1,11 +1,11 @@
 import Task from '../models/task.model.js'
 const createTask=async(req,res)=>{
   try{
-    const {title}=req.body;
+    const {title,description,status}=req.body;
     if(!title){
       return res.status(400).json({message:"please add a task "})
     }
-    const task=await Task.create({title})
+    const task=await Task.create({title,description,status})
     res.status(201).json(task)
   }catch(error){
     res.status(500).json({message:"internal server error"})

@@ -4,7 +4,6 @@ margin: 0;
 box-sizing: border-box;
 }
 .home-page-container{
-  border: 1px solid red;
   margin-top: 50px;
 
 }
@@ -48,17 +47,73 @@ color: rgb(30, 29, 29);
   animation: welcome 10s linear 3s infinite alternate;
  
 }
-.template{
+/* Reset */
+
+
+/* Hero Section */
+.hero {
+  height: 60vh;
+  background: linear-gradient(135deg, #4f46e5, #06b6d4);
+  color: white;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.hero button {
+  padding: 12px 25px;
+  border: none;
+  background: white;
+  color: #4f46e5;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero button:hover {
+  background: #e0e7ff;
+  transform: scale(1.05);
+}
+
+/* Features Section */
+.features {
   display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 50px 20px;
+  background: #f9fafb;
   flex-wrap: wrap;
-  row-gap: 30px;
-  column-gap: 60px;
-  justify-content: space-around;
 }
-.template div{
-  width: 100px;
-  height: 100px;
-  background-color: aqua;
-  border: 1px solid red;
- 
+
+.card {
+  background: white;
+  padding: 25px;
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: 0.3s;
 }
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #555;
+}
+
