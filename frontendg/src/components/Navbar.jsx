@@ -12,9 +12,9 @@ function Navbar() {
 
   return (
     <nav style={{ padding: 10, background: "#ddd" }}>
-      <Link to="/">Home</Link> |{" "}
-      <Link to="/products">Products</Link> |{" "}
-      <Link to="/contact">Contact</Link> |{" "}
+      <Link to="/">Home</Link> |{"  "}
+      <Link to="/products">Products </Link> |{"  "}
+      <Link to="/contact">Contact</Link> |{"  "}
 
       {isLoggedIn() ? (
         <button onClick={handleLogout}>Logout</button>

@@ -1,5 +1,5 @@
 import React ,{ useEffect, useState } from 'react';
-import { fetchDashboard } from '../utils/api';
+import { fetchDashboard } from '../utils/api.js';
 
 function Products() {
   const [data, setData] = useState("");
@@ -7,7 +7,7 @@ function Products() {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    fetchDashboard(token).then(setData);
+   fetchDashboard(token).then(setData);
   }, []);
 
   return (
