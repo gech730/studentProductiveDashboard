@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../css/home.css'
 function Home() {
+  const navigate=useNavigate()
   return (
     <div className='home-page-container'>
 
@@ -8,7 +10,9 @@ function Home() {
        <section class="hero">
     <h1 className='welcome'>Welcome to Your Student Dashboard</h1>
     <p>Plan • Track • Achieve Your Goals</p>
-    <button>Get Started</button>
+    <button onClick={()=>{
+      navigate("/program");
+    }}>Get Started</button>
   </section>
 
  

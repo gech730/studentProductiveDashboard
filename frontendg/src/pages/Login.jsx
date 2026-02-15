@@ -1,5 +1,5 @@
 import React,{ useState }  from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import { loginRequest } from '../utils/api.js';
 import '../css/navbar.css'
 function Login() {
@@ -10,12 +10,18 @@ function Login() {
   const handleLogin = async () => {
     try {
       const data = await loginRequest(email, password);
-
+        if(!data.token){
+           alert(data.message);
+           return;
+        }
       localStorage.setItem("token", data.token);
-
+      if(email==="admin@gmail.com" && password === "Admin123")
+        navigate("/admin");
+      else
       navigate("/program");
+    
     } catch (err) {
-      alert("Login failed");
+      alert("Login failed",err);
     }
   };
 
@@ -38,6 +44,9 @@ function Login() {
       <button onClick={handleLogin}>
         Login
       </button>
+      <p className="mono" >if you have not account {"  "}<Link to="/register">Register</Link></p>
+      <p className="mono"><Link to="/">forget password</Link></p>
+        
       </div>
       
     </div>

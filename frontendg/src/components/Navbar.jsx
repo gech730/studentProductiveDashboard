@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { isLoggedIn, logout } from '../utils/auth.js';
 import '../css/navbar.css'
-import logo from '../../public/student-svgrepo-com.svg';
+import logo from '/student-svgrepo-com.svg';
 function Navbar() {
   const navigate = useNavigate();
 
@@ -25,8 +25,10 @@ function Navbar() {
 
         {isLoggedIn() ? (
           <button className='logout' onClick={handleLogout}>Logout</button>
-        ) : (
-          <Link to="/login">Login</Link>
+        ) : (<>
+          <Link to="/login">Login</Link> {"  / "}
+          <Link to="/register">Register</Link>
+           </>
         )}
       </div>
 

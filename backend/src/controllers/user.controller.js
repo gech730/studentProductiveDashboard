@@ -20,10 +20,10 @@ const login= async(req,res)=>{
    const {email,password}=req.body;
    const user= await User.findOne({email});
    if(!user)
-    return res.status(404).json({message:"user not found"});
+    return res.status(404).json({message:"user not found (please register first)"});
     const isValid= await bcrypt.compare(password,user.password);
      if(!isValid)
-      return res.status(400).send("Wrong password");
+      return res.status(400).json({message:"Wrong password"});
      const token = jwt.sign(
     { id: user._id },
     process.env.JWT_SECRET,

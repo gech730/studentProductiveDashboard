@@ -7,6 +7,8 @@ import ProtectedRoute from './components/ProtectedRoute.jsx';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 import Dashboard from './pages/Dashboard.jsx';
+import Register from './pages/Register.jsx';
+import AdminDashboard from './pages/AdminDashboard.jsx'
 function App() {
   return (
     <BrowserRouter>
@@ -14,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-       
+        <Route path="/register" element={<Register />} />
         <Route
           path="/program"
           element={
@@ -24,6 +26,14 @@ function App() {
           }
         />
 
+ <Route
+          path="/Admin"
+          element={
+            <ProtectedRoute>
+              <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path="/contact"
           element={

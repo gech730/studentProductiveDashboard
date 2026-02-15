@@ -1,33 +1,59 @@
 import React ,{useEffect,useState} from 'react';
-import { getTasks } from '../utils/api.js';
-function Contact() {
-  const [data,setData]=useState([])
-  useEffect( ()=>{
-    const fetchData=async ()=>{
-    const res=await getTasks();
-    if(res)
-      setData(res);
-     const b=data.length;
-    console.log('data'+ res)
-    }
-   fetchData();
-  },[])
+import  '../css/contactPage.css'
+import { createComment } from '../utils/api';
+function ContactPage() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [comment, setComment] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+     if(name===""||email===""||comment==="")
+      return
+    console.log({ name, email, comment });
+  const res=await createComment({title:name,description:email, status:comment});
+  alert(res);
+    // Reset fields after submission
+    setName("");
+    setEmail("");
+    setComment("");
+  };
+
   return (
-    <div>
-      <h1>Contact Page</h1>
-      {
-       data.map(d=>(
-        <div key={d._id}>
-          <p>{d.title}</p>
-         <p>{d.status}</p>
-        </div>
-        
-       ))
-      }
-     
-      <p>Email: support@example.com</p>
+    <div className="contact-container">
+      <h1>Contact Us</h1>
+      <p>Have a question or feedback? Leave your comment below!</p>
+
+      <form className="contact-form" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Your Name    "
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+
+        <input
+          type="email"
+          placeholder="Your Email   "
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+
+        <textarea
+          placeholder="Your Comment"
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+          rows={5}
+          required
+        />
+
+        <button type="submit">Send Comment</button>
+      </form>
     </div>
   );
 }
 
-export default Contact;
+export default ContactPage;
+

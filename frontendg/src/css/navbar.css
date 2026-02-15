@@ -51,13 +51,24 @@
   display: flex;
  justify-content: center;
  align-items: center;
+  background: linear-gradient(135deg, #4f46e5, #06b6d4);
+  font-family: Arial, sans-serif;
 }
 .input-area{
    display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  row-gap: 8px;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 320px;
+  gap: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.mono{
+  font-family: monospace;
+}
+.mono a{
+ color: blue;
 }
 .input-area h1{
   text-align: center;
