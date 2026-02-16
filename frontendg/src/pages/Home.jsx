@@ -13,7 +13,7 @@ function Home() {
     <button onClick={()=>{
       navigate("/program");
     }}>Get Started</button>
-  </section>
+       </section>
 
  
   <section class="features">
@@ -41,8 +41,6 @@ function Home() {
 
     </div>
 
-   
-     
     </div>
   );
 }

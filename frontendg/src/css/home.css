@@ -7,10 +7,11 @@ box-sizing: border-box;
   margin-top: 50px;
 
 }
+/* Hero Section */
 
 @keyframes welcome {
   0% {
-color: rgb(30, 29, 29);
+ color: rgb(30, 29, 29);
  transform: rotateY(0deg);
 
   }
@@ -39,18 +40,15 @@ color: rgb(30, 29, 29);
   }
 }
 .welcome{
-  text-align: center;
-  padding: 10px;
   font-family: monospace;
   font-weight: 800;
   font-size: 1.5rem;
   animation: welcome 10s linear 3s infinite alternate;
  
 }
-/* Reset */
 
 
-/* Hero Section */
+
 .hero {
   height: 60vh;
   background: linear-gradient(135deg, #4f46e5, #06b6d4);
@@ -82,6 +80,7 @@ color: rgb(30, 29, 29);
 
 .hero button:hover {
   background: #e0e7ff;
+   
   transform: scale(1.05);
 }
 
@@ -104,9 +103,31 @@ color: rgb(30, 29, 29);
   text-align: center;
   transition: 0.3s;
 }
+@keyframes anim{
+  0% {
+     transform: rotateX(-90geg);
+     background-color: antiquewhite;
+  }
+    25% {
+     transform: rotateZ(-180deg);
+       background-color: rgb(250, 210, 158);
+  }
+    50% {
+     transform: rotateZ(-270deg);
+         background-color: rgb(255, 187, 99);
+  }
+    100% {
+     transform: rotateZ(-360deg);
+         background-color: rgb(249, 165, 56);
+  }
+
+}
 
 .card:hover {
-  transform: translateY(-8px);
+  animation: anim 0.5s linear;
+       
+
+
 }
 
 .card h3 {

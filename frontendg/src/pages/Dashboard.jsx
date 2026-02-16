@@ -190,31 +190,7 @@ resetForm();
     </section>
 
   </main>
-  <h2 >
-       comment management table
-  </h2>
-  <table border={1} rules="all">
-    <tr>
-      <th>RolNO.</th>
-      <th>name</th>
-      <th>email</th>
-      <th>comment</th>
-      <th>seen </th>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Getacher</td>
-      <td>getacher23@gmail.com</td>
-      <td>i like this website</td>
-      <td>
-        <input type="checkbox" name="" id="" />
-        {"  "}   
-        
-      <FaTrash />
-      </td>
-    </tr>
 
-  </table>
     </>
   )
 }
