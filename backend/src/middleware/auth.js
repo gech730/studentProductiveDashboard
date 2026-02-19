@@ -1,12 +1,14 @@
-export const verifyToken = (req, res, next) => {
+import jwt from 'jsonwebtoken';
+const verifyToken = (req, res, next) => {
   const token = req.headers.authorization;
 
-  if (!token) return res.status(403).send("Access denied");
+  if (!token) return res.status(403).json({message:"Access denied"});
 
   jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-    if (err) return res.status(403).send("Invalid token");
+    if (err) return res.status(403).json({message:"Invalid token"});
 
     req.user = user;
     next();
   });
 };
+export {verifyToken};

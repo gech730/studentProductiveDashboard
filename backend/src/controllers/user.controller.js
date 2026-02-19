@@ -36,18 +36,5 @@ const login= async(req,res)=>{
   res.status(500).json({message:"internal server error",error})
  }
 }
-const verifyToken = (req, res, next) => {
-  const token = req.headers.authorization;
 
-  if (!token) return res.sendStatus(403);
-
-  jwt.verify(token, "SECRET_KEY", (err, user) => {
-    if (err) return res.sendStatus(403);
-    req.user = user;
-    next();
-  });
-};
-
-
-
-export {register,login,verifyToken}
+export {register,login}

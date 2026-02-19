@@ -19,12 +19,11 @@ A **full-stack web application** to help students manage their tasks efficiently
 
 ## Features
 
-- Add new tasks with a title
-- Mark tasks as **completed** or **pending**
+- Add new tasks with a title and description
 - Delete tasks
-- Filter tasks: All / Completed / Pending
-- Daily summary: total, completed, and pending tasks
+- update tasks
 - Fully integrated frontend with backend API
+- post comment
 
 ---
 
@@ -46,6 +45,7 @@ studentProductiveDashboard/
 │   │    ├── config/
 │   │    ├── controllers/
 │   │    ├── routes/
+│   │    ├── middleware/
 │   │    ├── models/
 │   │    ├── app.js
 │   │    └── index.js
@@ -55,11 +55,13 @@ studentProductiveDashboard/
 │    ├── index.html
 │    ├── src/
 │    │   ├── components/
+│    │   ├── pages/
+│    │   ├── utils/
 │    │   ├── css/
 │    │   ├── main.js
-│    │   ├── api.js
 │    │   └── App.jsx
 │    └── package.json
+├── .gitignore
 └── README.md
 ```
 
@@ -101,7 +103,7 @@ The backend will run on http://localhost:4000.
 1. Navigate to the frontend folder:
 
 ```bash
-cd frontend
+cd frontend 
 ```
 
 2. Install dependencies:
@@ -113,7 +115,7 @@ npm install
 3. Start the React app:
 
 ```
-npm start
+npm start/ npm run dev
 ```
 
 The frontend will run on **http://localhost:3000**.
@@ -135,19 +137,11 @@ _Note:_ The frontend fetches and updates tasks using these API endpoints.
 
 1. Open the React app in your browser (http://localhost:3000)
 
-2. Add a new task using the input field and click Add Task
+2. Add a new task using the input field and click Add program
 
-3. Mark tasks as completed with the checkbox
-
-4. Delete tasks using the delete button
-
-5. Filter tasks using All / Completed / Pending buttons
-
-6. Check the summary section for daily statistics
+3. edit tasks
 
 # Future Improvements
-
-- User authentication (login/logout)
 
 - Task deadlines & reminders
 

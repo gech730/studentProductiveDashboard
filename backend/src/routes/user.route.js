@@ -1,9 +1,13 @@
 import { Router } from 'express';
-import { register ,login,verifyToken} from '../controllers/user.controller.js';
+import { register ,login} from '../controllers/user.controller.js';
+import {verifyToken} from '../middleware/auth.js'
 const router=Router();
 router.post('/register',register);
 router.post('/login',login);
 router.get("/dashboard", verifyToken, (req, res) => {
-  res.send("Protected data");
+   res.json({
+    message: "Welcome to dashboard",
+    user: req.user,
+  });
 });
 export default router;

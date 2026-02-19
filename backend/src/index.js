@@ -5,9 +5,6 @@ dotenv.config();
 const PORT=process.env.PORT || 8000;
 
 await connectDB();
-app.get("/", (req, res) => {
-  res.send("Server is running and connected to MongoDB!");
-});
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
